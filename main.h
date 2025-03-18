@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include "config.h"
 #include "Arduino.h"
 #include "Wav.h"
 #include "I2S.h"
@@ -23,9 +24,9 @@
 
 #define _DEBUG
 #ifdef _DEBUG
-  #define DEBUG_LOG(msg)  Serial.println(msg)
+#define DEBUG_LOG(msg)  Serial.println(msg)
 #else
-  #define DEBUG_LOG(msg)
+#define DEBUG_LOG(msg)
 #endif
 
 ////////////////////////////////////////
@@ -54,8 +55,6 @@ const char* ESP_SSID_PASS = "12345678";
 
 const char* WIFI_SSID;
 const char* WIFI_PASS;
-
-const char* serverName = "http://www.google.com/speech-api/v2/recognize?client=chromium&lang=uk-UA&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw";
 
 const int record_time = 3;  // second
 const int headerSize = 44;
