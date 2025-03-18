@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Wall-e Access Point</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h3>Please, enter Wi-Fi credentials:</h3>
+
+<div class="wifi-settings-container">
+  <form>
+    <label for="wifi-ssid">Wi-Fi name</label>
+    <div class="input-container">
+      <select id="wifi-ssid" name="select"> <!--Supplement an id here instead of using 'name'-->
+        <option>Select</option>
+      </select>
+
+      <!--<input type="text" id="wifi-ssid" name="wifi_ssid" placeholder="Wi-Fi name..">-->
+      <button class="action-button" id="search-networks-button" type="button" onclick="updateNetworks()">Search Networks</button>
+    </div>
+
+    <label for="wifi-pass">Wi-Fi password</label>
+    <input type="text" id="wifi-pass" name="wifi_pass" placeholder="Wi-Fi password..">
+  
+   <button type="button" class="sendButton" onclick="wifiCredRequest(this)">Save Settings</button>
+
+  </form>
+
+   
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
