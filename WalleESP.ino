@@ -80,7 +80,7 @@ void loop() {
     } else if ((text.indexOf("Сила") >= 0 || text.indexOf("сила") >= 0) && (text.indexOf("робоко") >= 0 || text.indexOf("Робоко") >= 0)) {
       DEBUG_LOG(ROBOCODE_POWER);
       SEND_COMMAND(ROBOCODE_POWER);
-    } else if ((text.indexOf("Зморився") >= 0 || text.indexOf("зморився") >= 0)) {
+    } else if ((text.indexOf("Втомився") >= 0 || text.indexOf("втомився") >= 0)) {
       DEBUG_LOG(TIRED);
       SEND_COMMAND(TIRED);
     } else if ((text.indexOf("Як") >= 0 || text.indexOf("як") >= 0) && (text.indexOf("Тебе") >= 0 || text.indexOf("тебе") >= 0) && (text.indexOf("Звати") >= 0 || text.indexOf("звати") >= 0)) {
@@ -89,6 +89,9 @@ void loop() {
     } else if ((text.indexOf("Ти") >= 0 || text.indexOf("ти") >= 0) && (text.indexOf("Звідки") >= 0 || text.indexOf("звідки") >= 0)) {
       DEBUG_LOG(WHERE_ARE_YOU_FROM);
       SEND_COMMAND(WHERE_ARE_YOU_FROM);
+    } else if ((text.indexOf("Заряд") >= 0 || text.indexOf("заряд") >= 0)) {
+      DEBUG_LOG(BATTERY_LEVEL);
+      SEND_COMMAND(BATTERY_LEVEL);
     } else {
       DEBUG_LOG(EMPTY_COMMAND);
       SEND_COMMAND(EMPTY_COMMAND);

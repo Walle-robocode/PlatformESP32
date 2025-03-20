@@ -1,16 +1,17 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include "config.h"
-#include "Arduino.h"
-#include "Wav.h"
-#include "I2S.h"
-#include "Arduino_JSON.h"
+#include <Arduino.h>
+#include <Arduino_JSON.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
-#include "ESPAsyncWebServer.h"
-#include "esp_task_wdt.h"
+#include <ESPAsyncWebServer.h>
 #include <SD.h>
+
+#include "config.h"
+#include "esp_task_wdt.h"
+#include "Wav.h"
+#include "I2S.h"
 
 #define TIME_FOR_CONNECTING 20000
 #define I2S_MODE I2S_MODE_ADC_BUILT_IN
@@ -50,6 +51,7 @@
 #define SPEAK "S"
 #define RECOGNIZE "R"
 #define EMPTY_COMMAND "E"
+#define BATTERY_LEVEL "C"
 
 ////////////////////////////////////////
 
