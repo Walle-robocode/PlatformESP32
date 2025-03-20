@@ -26,9 +26,21 @@ void setup() {
 }
 
 long lastCheckTime = 0;
+bool isAcknowledge = true;
 
 void loop() {
+  if (ARDUINO.available()) {
+    char cmd = ARDUINO.read();
+    DEBUG.print("We have a command: ");
+    DEBUG.println(cmd);
+    if (cmd == ARDUINO_ACK_CODE) isAcknowledge = true;
+    ARDUINO.flush();
+  }
   if (WiFi.status() == WL_CONNECTED) {
+
+    if (!isAcknowledge) return;
+    isAcknowledge = false;
+
     DEBUG_LOG("Plese, speak");
     SEND_COMMAND(SPEAK);
     record();
@@ -77,6 +89,9 @@ void loop() {
     } else if ((text.indexOf("Ти") >= 0 || text.indexOf("ти") >= 0) && (text.indexOf("Звідки") >= 0 || text.indexOf("звідки") >= 0)) {
       DEBUG_LOG(WHERE_ARE_YOU_FROM);
       SEND_COMMAND(WHERE_ARE_YOU_FROM);
+    } else {
+      DEBUG_LOG(EMPTY_COMMAND);
+      SEND_COMMAND(EMPTY_COMMAND);
     }
   } else {
     if (millis() > lastCheckTime + 5000) {

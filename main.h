@@ -20,6 +20,8 @@
 #define DEBUG Serial
 #define ARDUINO Serial2
 
+#define ARDUINO_ACK_CODE '#'
+
 #define SEND_COMMAND(cmd) ARDUINO.print(cmd)
 
 #define _DEBUG
@@ -47,6 +49,7 @@
 #define IP_ADDR "I"
 #define SPEAK "S"
 #define RECOGNIZE "R"
+#define EMPTY_COMMAND "E"
 
 ////////////////////////////////////////
 
