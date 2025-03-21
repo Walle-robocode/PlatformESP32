@@ -1,3 +1,5 @@
+#include <HTTPClient.h>
+
 #include "main.h"
 
 AsyncWebServer server(80);
